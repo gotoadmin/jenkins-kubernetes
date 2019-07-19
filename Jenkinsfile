@@ -17,6 +17,9 @@ pipeline {
           sh 'echo BUSYBOX_CONTAINER_ENV_VAR = ${CONTAINER_ENV_VAR}'
           sh '/bin/busybox'
         }
+        container('helm') {
+          sh 'sleep 1000'
+        }
       }
     }
   }
