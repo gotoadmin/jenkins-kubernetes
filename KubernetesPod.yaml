@@ -32,7 +32,8 @@ spec:
     - name: kube-config
       mountPath: "/root/.kube/config"
       readOnly: true
-    command: sleep 1000
+    command: 
+    - sleep 1000
   volumes:
   - name: kube-config
     secret:
