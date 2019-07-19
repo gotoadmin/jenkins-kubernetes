@@ -23,17 +23,17 @@ spec:
     env:
     - name: CONTAINER_ENV_VAR
       value: busybox
-   - name: helm
-     image: alpine/helm
-     env:
-     - name: CONTAINER_ENV_VAR
-       value: helm
-     volumeMounts:
-     - name: kube-config
-       mountPath: "/root/.kube/config"
-       readOnly: true
-     command: sleep 1000
-    volumes:
+  - name: helm
+    image: alpine/helm
+    env:
+    - name: CONTAINER_ENV_VAR
+      value: helm
+    volumeMounts:
     - name: kube-config
-    secret:
-      secretName: kube-config
+      mountPath: "/root/.kube/config"
+      readOnly: true
+    command: sleep 1000
+   volumes:
+   - name: kube-config
+   secret:
+     secretName: kube-config
